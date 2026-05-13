@@ -1,0 +1,539 @@
+# Structure of Dashboard
+
+```text
+container-fluid
+│
+└── row
+    │
+    ├── sidebar (col-md-2)
+    │      ├── heading
+    │      └── nav menu links
+    │
+    └── main-content (col-md-10)
+           │
+           ├── dashboard title
+           │
+           ├── cards row
+           │      ├── card 1
+           │      ├── card 2
+           │      ├── card 3
+           │      └── card 4
+           │
+           └── table section
+                  ├── table heading
+                  └── exam table
+```
+
+---
+
+# Line By Line Explanation
+
+---
+
+## 1. Basic HTML Structure
+
+```html
+<!DOCTYPE html>
+```
+
+Defines HTML5 document.
+
+---
+
+```html
+<html lang="en">
+```
+
+Starts HTML page and language is English.
+
+---
+
+```html
+<head>
+```
+
+Contains page settings, CSS links, title etc.
+
+---
+
+```html
+<meta charset="UTF-8">
+```
+
+Supports all characters properly.
+
+---
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+Makes webpage responsive on mobile devices.
+
+---
+
+```html
+<title>Exam Admin Dashboard</title>
+```
+
+Browser tab title.
+
+---
+
+# 2. Bootstrap CSS Link
+
+```html
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+```
+
+Imports Bootstrap library.
+
+Bootstrap gives:
+
+* Grid system
+* Cards
+* Tables
+* Responsive design
+* Utility classes
+
+---
+
+# 3. External CSS File
+
+```html
+<link rel="stylesheet" href="style.css">
+```
+
+Connects custom CSS file.
+
+---
+
+# 4. Body Starts
+
+```html
+<body>
+```
+
+Visible content starts here.
+
+---
+
+# 5. Main Container
+
+```html
+<div class="container-fluid">
+```
+
+Bootstrap full-width container.
+
+# `container-fluid`
+
+takes full screen width.
+
+---
+
+# 6. Row
+
+```html
+<div class="row">
+```
+
+Creates horizontal row using Bootstrap grid system.
+
+Inside row:
+
+* sidebar
+* main content
+
+---
+
+# 7. Sidebar Section
+
+```html
+<div class="col-md-2 sidebar p-3">
+```
+
+### Meaning:
+
+| Class      | Purpose                           |
+| ---------- | --------------------------------- |
+| `col-md-2` | Sidebar takes 2 columns out of 12 |
+| `sidebar`  | Custom CSS styling                |
+| `p-3`      | Padding                           |
+
+Bootstrap grid total = 12 columns.
+
+So:
+
+* Sidebar = 2
+* Main content = 10
+
+2 + 10 = 12
+
+---
+
+# 8. Sidebar Heading
+
+```html
+<h3 class="text-white text-center mb-4">
+  Admin Panel
+</h3>
+```
+
+| Class         | Meaning       |
+| ------------- | ------------- |
+| `text-white`  | White text    |
+| `text-center` | Center align  |
+| `mb-4`        | Margin bottom |
+
+---
+
+# 9. Navigation Links
+
+```html
+<a href="#">Dashboard</a>
+```
+
+Creates sidebar menu button.
+
+`#`
+means dummy link.
+
+Other links same way:
+
+* Students
+* Exams
+* Results
+* Settings
+
+---
+
+# 10. Main Content Section
+
+```html
+<div class="col-md-10 p-4">
+```
+
+### Meaning:
+
+| Class       | Purpose                    |
+| ----------- | -------------------------- |
+| `col-md-10` | Takes remaining 10 columns |
+| `p-4`       | Padding                    |
+
+---
+
+# 11. Dashboard Title
+
+```html
+<h2 class="mb-4">Exam Dashboard</h2>
+```
+
+Dashboard heading.
+
+# `mb-4`
+
+margin bottom.
+
+---
+
+# 12. Cards Row
+
+```html
+<div class="row g-4">
+```
+
+Creates row for cards.
+
+# `g-4`
+
+gap between cards.
+
+---
+
+# 13. Card Column
+
+```html
+<div class="col-sm-6 col-lg-3">
+```
+
+Responsive card width.
+
+| Screen       | Width     |
+| ------------ | --------- |
+| Small screen | 6 columns |
+| Large screen | 3 columns |
+
+So:
+
+* Mobile → 2 cards per row
+* Large screen → 4 cards per row
+
+---
+
+# 14. Card Design
+
+```html
+<div class="card p-3 text-center bg-primary text-white">
+```
+
+### Classes:
+
+| Class         | Meaning         |
+| ------------- | --------------- |
+| `card`        | Bootstrap card  |
+| `p-3`         | Padding         |
+| `text-center` | Center text     |
+| `bg-primary`  | Blue background |
+| `text-white`  | White text      |
+
+---
+
+# 15. Card Content
+
+```html
+<h5>Total Students</h5>
+<h3>1200</h3>
+```
+
+Shows title and number.
+
+---
+
+# 16. Table Card
+
+```html
+<div class="card mt-5 p-4">
+```
+
+Creates table section inside card.
+
+| Class  | Meaning    |
+| ------ | ---------- |
+| `mt-5` | Margin top |
+| `p-4`  | Padding    |
+
+---
+
+# 17. Table Responsive
+
+```html
+<div class="table-responsive">
+```
+
+Makes table scrollable on mobile.
+
+---
+
+# 18. Table
+
+```html
+<table class="table table-bordered table-hover">
+```
+
+Bootstrap table classes.
+
+| Class            | Purpose               |
+| ---------------- | --------------------- |
+| `table`          | Basic Bootstrap table |
+| `table-bordered` | Borders               |
+| `table-hover`    | Hover effect          |
+
+---
+
+# 19. Table Head
+
+```html
+<thead class="table-dark">
+```
+
+Dark header background.
+
+---
+
+# 20. Table Row
+
+```html
+<tr>
+```
+
+Creates row.
+
+---
+
+# 21. Table Data
+
+```html
+<td>Java Practical</td>
+```
+
+Table cell data.
+
+---
+
+# CSS Explanation
+
+---
+
+# Body
+
+```css
+body {
+  overflow-x: hidden;
+  background-color: #f5f6fa;
+}
+```
+
+| Property             | Meaning                   |
+| -------------------- | ------------------------- |
+| `overflow-x: hidden` | Prevent horizontal scroll |
+| `background-color`   | Page background           |
+
+---
+
+# Sidebar
+
+```css
+.sidebar {
+  min-height: 100vh;
+  background-color: #212529;
+}
+```
+
+| Property            | Meaning            |
+| ------------------- | ------------------ |
+| `min-height: 100vh` | Full screen height |
+| `background-color`  | Dark sidebar       |
+
+---
+
+# Sidebar Links
+
+```css
+.sidebar a {
+```
+
+Styles all sidebar links.
+
+---
+
+```css
+display: block;
+```
+
+Each link takes full line.
+
+---
+
+```css
+padding: 12px;
+```
+
+Space inside buttons.
+
+---
+
+```css
+border-radius: 5px;
+```
+
+Rounded corners.
+
+---
+
+# Hover Effect
+
+```css
+.sidebar a:hover {
+  background-color: #343a40;
+}
+```
+
+Changes background when mouse hovers.
+
+---
+
+# Card Styling
+
+```css
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+```
+
+| Property        | Meaning        |
+| --------------- | -------------- |
+| `border: none`  | Removes border |
+| `border-radius` | Rounded card   |
+| `box-shadow`    | Shadow effect  |
+
+---
+
+# JavaScript Explanation
+
+---
+
+# Select Sidebar Links
+
+```javascript
+const sidebarLinks = document.querySelectorAll(".sidebar a");
+```
+
+Selects all `<a>` tags inside sidebar.
+
+---
+
+# Loop Through Links
+
+```javascript
+sidebarLinks.forEach(link => {
+```
+
+Runs code for every sidebar button.
+
+---
+
+# Click Event
+
+```javascript
+link.addEventListener("click", function () {
+```
+
+Runs when button clicked.
+
+---
+
+# Remove Active Class
+
+```javascript
+sidebarLinks.forEach(item => {
+  item.classList.remove("active-menu");
+});
+```
+
+Removes highlight from all buttons.
+
+---
+
+# Add Active Class
+
+```javascript
+this.classList.add("active-menu");
+```
+
+Adds highlight to clicked button.
+
+---
+
+# Active CSS
+
+```css
+.active-menu {
+  background-color: #0d6efd;
+  color: white !important;
+}
+```
+
+Changes clicked button color to blue.
