@@ -1,0 +1,35 @@
+server.js
+const express = require('express')
+
+const app = express()
+
+app.get('/', (req,res)=>{
+    res.send("Docker runs successfully")
+})
+
+app.listen(3000, ()=>{
+    console.log("Server on Port 3000")
+})
+
+Dockerfile
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm i
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["node","server.js"]
+
+terminal madhe 
+npm init -y
+npm install express
+
+docker build -t folder_name . 
+docker run -p 3000:3000 test
+docker images 
