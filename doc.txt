@@ -30,6 +30,6 @@ terminal madhe
 npm init -y
 npm install express
 
-docker build -t folder_name . 
-docker run -p 3000:3000 test
+docker build -t desi . 
+docker run -p 3000:3000 desi
 docker images 
